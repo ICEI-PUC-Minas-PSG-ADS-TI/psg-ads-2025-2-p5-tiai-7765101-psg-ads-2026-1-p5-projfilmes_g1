@@ -5,11 +5,11 @@ O projeto adota uma metodologia ágil, simulando o ambiente de uma Software Hous
 
 ---
 
-### 🚨 Regra de Ouro: 
+### 🚨 Regra de Ouro:
 
 > ❗Não existe divisão entre “quem faz documento”, “quem faz Front-end” e “quem faz Back-end”.
 
-<br>Todos os integrantes são **Desenvolvedores Full-Stack** e devem implementar **Fatias Verticais (Vertical Slices)**.
+Todos os integrantes são **Desenvolvedores Full-Stack** e devem implementar **Fatias Verticais (Vertical Slices)**.
 
 ✔️ Cada membro deve entregar a funcionalidade completa:  
 **Banco de Dados → API → Tela**
@@ -25,6 +25,7 @@ O projeto será realizado em **4 Sprints**, com entregas contínuas de código e
 ## 📅 Visão Geral
 
 ### 🟢 Sprint 1 – Setup, Hello World e Visão do Produto
+
 - README com descrição do projeto
 - ODS escolhida
 - Backlog macro
@@ -35,6 +36,7 @@ O projeto será realizado em **4 Sprints**, com entregas contínuas de código e
 ---
 
 ### 🟡 Sprint 2 – MVP (Primeira Fatia Vertical)
+
 - Requisitos Funcionais documentados
 - Script do Banco de Dados
 - 1ª funcionalidade completa funcionando
@@ -45,6 +47,7 @@ O projeto será realizado em **4 Sprints**, com entregas contínuas de código e
 ---
 
 ### 🔵 Sprint 3 – Core e Regras de Negócio
+
 - Implementação das regras de negócio
 - Validações no backend
 - DER atualizado via Engenharia Reversa
@@ -53,6 +56,7 @@ O projeto será realizado em **4 Sprints**, com entregas contínuas de código e
 ---
 
 ### 🔴 Sprint 4 – Finalização e Deploy
+
 - Correção de bugs
 - Testes finais ponta a ponta
 - Documentação final consolidada
@@ -67,27 +71,24 @@ Todos programam.
 Os papéis abaixo são apenas para organização do time.
 
 - 👨‍💻 **Tech Lead (Git Master)**  
-  Responsável pelo repositório e merges.
-
+Responsável pelo repositório e merges.
 - 🗄️ **Arquiteto de Dados (DBA Guard)**  
-  Responsável pela modelagem e padronização do banco.
-
+Responsável pela modelagem e padronização do banco.
 - 🧪 **Gerente de Qualidade (QA & Code Reviewer)**  
-  Responsável por revisar código e validar testes.
-
+Responsável por revisar código e validar testes.
 - 📋 **Facilitador Ágil (PO / Scrum Master)**  
-  Responsável por prazos, Kanban e priorização do backlog.
+Responsável por prazos, Kanban e priorização do backlog.
 
 ---
 
-##  Definição dos Papéis – Sprint 1
+## Definição dos Papéis – Sprint 1
 
-- 👨‍💻 Tech Lead:
-- 🗄️ Arquiteto de Dados:
-- 🧪 Gerente de Qualidade:
-- 📋 Facilitador Ágil:
+- 👨‍💻 Tech Lead: Pedro Dias
+- 🗄️ Arquiteto de Dados: Lucas Dias
+- 🧪 Gerente de Qualidade: Arthur Coelho
+- 📋 Facilitador Ágil: Melissa Baia
 
-> Caso os papéis mudem nas próximas Sprints, atualizar neste documento.
+> Caso os r neste documento.papéis mudem nas próximas Sprints, atualiza
 
 ---
 
@@ -124,53 +125,62 @@ O projeto pode utilizar a aba **Projects** do GitHub, porém é **OBRIGATÓRIO p
 
 ## Legenda de Status
 
-- [x] ✔️ Concluído
-- [ ] 📝 Em andamento
-- [ ] ⌛ Atrasado
-- [ ] ❌ Não iniciado
+- ✔️ Concluído
+- 📝 Em andamento
+- ⌛ Atrasado
+- ❌ Não iniciado
 
 ---
 
 # 🟢 Sprint 1 – Setup
 
-| Responsável | Papel | Tarefa | Início | Prazo | Status |
-|-------------|--------|--------|--------|--------|--------|
-|             |        | Preencher Visão do Produto, ODS e Backlog no README | 12/03 | 15/03 | ❌ |
-|             |        | Criar instância do Banco de Dados | 12/03 | 16/03 | ❌ |
-|             |        | Criar repositório e estruturar pastas | 12/03 | 18/03 | ❌ |
-|             |        | Criar tela Hello World conectada à API | 15/03 | 20/03 | ❌ |
+
+| Responsável   | Papel                | Tarefa                                              | Início | Prazo | Status |
+| ------------- | -------------------- | --------------------------------------------------- | ------ | ----- | ------ |
+| Melissa Baia  | Facilitador Ágil     | Preencher Visão do Produto, ODS e Backlog no README | 12/03  | 15/03 | ❌      |
+| Lucas Dias    | Arquiteto de Dados   | Criar instância do Banco de Dados                   | 12/03  | 16/03 | ❌      |
+| Pedro Dias    | Tech Lead            | Criar repositório e estruturar pastas               | 12/03  | 18/03 | ❌      |
+| Arthur Coelho | Gerente de Qualidade | Criar tela Hello World conectada à API              | 15/03  | 20/03 | ❌      |
+
 
 ---
 
 # 🟡 Sprint 2 – MVP
 
-| Responsável | Papel | Tarefa | Início | Prazo | Status |
-|-------------|--------|--------|--------|--------|--------|
-|             |        | Gerar Script do Banco de Dados | 21/03 | 24/03 | ❌ |
-|             |        | Desenvolver Fatia 1 (BD + API + Tela) | 22/03 | 30/03 | ❌ |
-|             |        | Documentar Requisitos do MVP | 25/03 | 02/04 | ❌ |
-|             |        | Revisão técnica e Merge | 02/04 | 05/04 | ❌ |
+
+| Responsável   | Papel                | Tarefa                                                                            | Início | Prazo | Status |
+| ------------- | -------------------- | --------------------------------------------------------------------------------- | ------ | ----- | ------ |
+| Lucas Dias    | Arquiteto de Dados   | Gerar Script do Banco de Dados (entidades: usuário, registro de humor, desabafos) | 21/03  | 24/03 | ❌      |
+| Pedro Dias    | Tech Lead            | Desenvolver Fatia 1: registro de humor + desabafo (BD + API + Tela)               | 22/03  | 30/03 | ❌      |
+| Melissa Baia  | Facilitador Ágil     | Documentar Requisitos do MVP                                                      | 25/03  | 02/04 | ❌      |
+| Arthur Coelho | Gerente de Qualidade | Revisão técnica e Merge                                                           | 02/04  | 05/04 | ❌      |
+
 
 ---
 
 # 🔵 Sprint 3 – Core
 
-| Responsável | Papel | Tarefa | Início | Prazo | Status |
-|-------------|--------|--------|--------|--------|--------|
-|             |        | Implementar Regra de Negócio Y | 06/04 | 15/04 | ❌ |
-|             |        | Implementar Cálculo/Processo Z | 06/04 | 15/04 | ❌ |
-|             |        | Atualizar DER via Engenharia Reversa | 16/04 | 20/04 | ❌ |
-|             |        | Atualizar Diagrama de Classes | 16/04 | 23/04 | ❌ |
+
+| Responsável   | Papel                | Tarefa                                                                                         | Início | Prazo | Status |
+| ------------- | -------------------- | ---------------------------------------------------------------------------------------------- | ------ | ----- | ------ |
+| Arthur Coelho | Gerente de Qualidade | Implementar análise de sentimento (IA) e detecção de palavras de risco                         | 06/04  | 15/04 | ❌      |
+| Pedro Dias    | Tech Lead            | Implementar dashboard com gráficos semanais/mensais e exibição de contatos de ajuda (ex.: CVV) | 06/04  | 15/04 | ❌      |
+| Lucas Dias    | Arquiteto de Dados   | Atualizar DER via Engenharia Reversa                                                           | 16/04  | 20/04 | ❌      |
+| Melissa Baia  | Facilitador Ágil     | Atualizar Diagrama de Classes                                                                  | 16/04  | 23/04 | ❌      |
+
 
 ---
 
 # 🔴 Sprint 4 – Finalização
 
-| Responsável | Papel | Tarefa | Início | Prazo | Status |
-|-------------|--------|--------|--------|--------|--------|
-|             |        | Correção de bugs | 22/05 | 05/06 | ❌ |
-|             |        | Finalizar relatórios e dashboards | 01/06 | 15/06 | ❌ |
-|             |        | Preencher Relatório APC | 10/06 | 20/06 | ❌ |
-|             |        | Testes finais e consolidar README | 15/06 | 25/06 | ❌ |
+
+| Responsável   | Papel                | Tarefa                            | Início | Prazo | Status |
+| ------------- | -------------------- | --------------------------------- | ------ | ----- | ------ |
+| Arthur Coelho | Gerente de Qualidade | Correção de bugs                  | 22/05  | 05/06 | ❌      |
+| Pedro Dias    | Tech Lead            | Finalizar relatórios e dashboards | 01/06  | 15/06 | ❌      |
+| Melissa Baia  | Facilitador Ágil     | Preencher Relatório APC           | 10/06  | 20/06 | ❌      |
+| Lucas Dias    | Arquiteto de Dados   | Testes finais e consolidar README | 15/06  | 25/06 | ❌      |
+
 
 ---
+
