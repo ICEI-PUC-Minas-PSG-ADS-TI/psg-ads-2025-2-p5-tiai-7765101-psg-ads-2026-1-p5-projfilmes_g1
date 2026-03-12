@@ -1,3 +1,4 @@
+import "./CalmNowCard.css";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Wind } from "lucide-react";

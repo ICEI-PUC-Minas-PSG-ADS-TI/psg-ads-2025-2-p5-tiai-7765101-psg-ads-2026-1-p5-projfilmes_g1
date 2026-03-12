@@ -4,8 +4,8 @@
 }
 
 .main-content {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;

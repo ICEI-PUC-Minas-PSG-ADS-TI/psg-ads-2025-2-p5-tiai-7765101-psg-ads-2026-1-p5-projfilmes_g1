@@ -1,0 +1,21 @@
+/* ===== Insights Card ===== */
+.insights-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chart-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.chart-container {
+  height: 12rem;
+}
+
+.chart-container-sm {
+  height: 10rem;
+}

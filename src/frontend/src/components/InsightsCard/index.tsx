@@ -1,3 +1,4 @@
+import "./InsightsCard.css";
 import { motion } from "framer-motion";
 import {
   ResponsiveContainer,

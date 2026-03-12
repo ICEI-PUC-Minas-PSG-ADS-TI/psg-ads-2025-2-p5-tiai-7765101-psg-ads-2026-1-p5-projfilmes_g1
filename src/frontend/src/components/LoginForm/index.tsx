@@ -1,5 +1,7 @@
+import "./LoginForm.css";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Input from "@/components/Input";
 
 interface LoginFormProps {
   onLogin: () => void;
@@ -30,28 +32,8 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
         </div>
 
         <form onSubmit={handleSubmit} className="login-form">
-          <div className="form-group">
-            <label htmlFor="email" className="form-label">Email</label>
-            <input
-              id="email"
-              type="email"
-              placeholder="you@example.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="form-input"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password" className="form-label">Password</label>
-            <input
-              id="password"
-              type="password"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="form-input"
-            />
-          </div>
+          <Input label="Email" type="email" placeholder="you@example.com" value={email} onChange={setEmail} />
+          <Input label="Password" type="password" placeholder="••••••••" value={password} onChange={setPassword} />
 
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <button type="submit" className="btn btn-primary btn-full">
