@@ -1,0 +1,34 @@
+/* ===== Insights Card ===== */
+.insights-card {
+  background: var(--card);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card);
+  padding: 1.5rem;
+}
+
+.insights-heading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.insights-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chart-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.chart-container {
+  height: 12rem;
+}
+
+.chart-container-sm {
+  height: 10rem;
+}

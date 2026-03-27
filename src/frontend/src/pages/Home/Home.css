@@ -1,0 +1,43 @@
+/* ===== Home Page ===== */
+.page-full {
+  min-height: 100vh;
+}
+
+.home-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .home-container {
+    padding: 0 1.5rem;
+  }
+}
+
+.main-content {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.home-heading-page {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.home-grid-2 {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .home-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Support Card ===== */
