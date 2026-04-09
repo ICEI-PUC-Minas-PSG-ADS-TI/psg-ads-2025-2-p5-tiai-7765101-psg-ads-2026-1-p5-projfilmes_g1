@@ -1,5 +1,6 @@
 import "./LoginForm.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Input from "@/components/Input";
 
@@ -43,8 +44,12 @@ const LoginForm = ({ onLogin }: LoginFormProps) => {
         </form>
 
         <div className="login-links">
-          <button className="login-btn-link">Criar conta</button>
-          <button className="login-btn-text">Esqueceu a senha?</button>
+          <Link to="/register" className="login-btn-link">
+            Criar conta
+          </Link>
+          <button type="button" className="login-btn-text">
+            Esqueceu a senha?
+          </button>
         </div>
 
         <p className="login-disclaimer">

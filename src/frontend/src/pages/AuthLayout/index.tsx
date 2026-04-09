@@ -1,13 +1,9 @@
-import "./Login.css";
+import "./AuthLayout.css";
+import { Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
-import LoginForm from "@/components/LoginForm";
 import loginIllustration from "@/assets/login-illustration.png";
 
-interface LoginProps {
-  onLogin: () => void;
-}
-
-const Login = ({ onLogin }: LoginProps) => {
+const AuthLayout = () => {
   return (
     <div className="login-page">
       <motion.div
@@ -25,10 +21,10 @@ const Login = ({ onLogin }: LoginProps) => {
       </motion.div>
 
       <div className="login-form-side">
-        <LoginForm onLogin={onLogin} />
+        <Outlet />
       </div>
     </div>
   );
 };
 
-export default Login;
+export default AuthLayout;

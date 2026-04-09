@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster } from "sonner";
-import Login from "./pages/Login";
+import AuthLayout from "./pages/AuthLayout";
+import LoginForm from "./components/LoginForm";
+import RegisterForm from "./components/RegisterForm";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
@@ -13,10 +15,10 @@ const App = () => {
       <Toaster />
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={loggedIn ? <Home /> : <Login onLogin={() => setLoggedIn(true)} />}
-          />
+          <Route path="/" element={loggedIn ? <Home /> : <AuthLayout />}>
+            <Route index element={<LoginForm onLogin={() => setLoggedIn(true)} />} />
+            <Route path="register" element={<RegisterForm />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
