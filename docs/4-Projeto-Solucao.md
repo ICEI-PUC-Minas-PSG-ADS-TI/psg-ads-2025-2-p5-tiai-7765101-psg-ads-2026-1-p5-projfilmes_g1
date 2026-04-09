@@ -15,7 +15,7 @@
 |----------|----------------------|
 | Banco de Dados (SGBD) | SQL Server |
 | Back-end (API) | C# (.NET Core) |
-| Front-end / Mobile | Ex: React + TypeScript |
+| Front-end / Mobile | React + TypeScript |
 | Hospedagem / Deploy |  |
 | Gestão e Versionamento | GitHub e GitHub Projects (Kanban) |
 
