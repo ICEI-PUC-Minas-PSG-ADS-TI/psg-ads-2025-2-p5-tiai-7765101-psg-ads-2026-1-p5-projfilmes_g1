@@ -39,6 +39,17 @@
   gap: 1rem;
 }
 
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1 1 8rem;
+  min-width: 0;
+}
+
 .login-links {
   display: flex;
   align-items: center;
@@ -92,6 +103,9 @@
   color: var(--primary);
   background: none;
   padding: 0;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
 
 .login-btn-link:hover {

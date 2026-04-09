@@ -52,13 +52,13 @@ Eles garantem a qualidade da solução.
 
 | ID     | Descrição do Requisito | Prioridade |
 |--------|------------------------|------------|
-| RNF-01 | O sistema deve proteger as informações dos usuários por meio de criptografia. | 🔴 ALTA |
-| RNF-02 | O sistema deve carregar as páginas em até 2 segundos. | 🟡 MÉDIA |
-
----
+<<<<<<< HEAD
+| RNF-01 | O sistema deve carregar as páginas em até 3 segundos. | 🟡 MÉDIA |
+| RNF-02 | O sistema deve proteger as informações dos clientes por meio de criptografia. | 🔴 ALTA |
+| RNF-03 | (Descreva aqui o requisito não funcional 3 do seu sistema) | (Alta/Média/Baixa) |
+| RNF-04 | (Descreva aqui o requisito não funcional 4 do seu sistema) | (Alta/Média/Baixa) |
 
 # 3.4 Restrições do Projeto
-
 📌 **Restrições** são limitações externas impostas ao projeto.
 
 Elas podem envolver:
@@ -70,6 +70,11 @@ Elas podem envolver:
 
 ⚠️ Diferente dos RNFs, as restrições impõem **limites fixos** ao projeto.
 
+<<<<<<< HEAD
+---
+
+=======
+>>>>>>> origin/main
 ## Tabela de Restrições
 
 | ID  | Restrição |
@@ -98,6 +103,11 @@ Elas podem envolver:
 > Também pode ser escrito assim (if/then):  
 > - "Se o usuário tem saldo acima de X, então a opção de empréstimo estará liberada."
 
+<<<<<<< HEAD
+---
+
+=======
+>>>>>>> origin/main
  A tabela abaixo deve ser preenchida com as regras de negócio que **impactam seu projeto**. Os textos no quadro são apenas ilustrativos.
 
 |ID    | Regra de Negócio                                                       |
