@@ -64,7 +64,7 @@ namespace backend.Controllers
             var token = _tokenService.GenerateToken(usuario);
             var completedOnboarding = GetCompletedOnboarding(usuario.Id);
 
-            return Ok(new { token, usuario.Nome, completedOnboarding.IsCompleted});
+            return Ok(new { token, usuario.Nome, onboardingCompleted = completedOnboarding });
         }
 
         private string HashSenha(string senha)

@@ -7,7 +7,7 @@ import { register } from "@/services/auth";
 import { toast } from "react-toastify";
 
 interface RegisterFormProps {
-  onLogin: () => void;
+  onLogin: (onboardingCompleted?: boolean) => void;
 }
 
 const RegisterForm = ({ onLogin }: RegisterFormProps) => {
@@ -30,8 +30,8 @@ const RegisterForm = ({ onLogin }: RegisterFormProps) => {
         pending: "Registrando usuário...",
         success: "Usuário registrado com sucesso",
       });
-      onLogin();
-      navigate("/home");
+      onLogin(false);
+      navigate("/redirect-after-login");
     } catch (error) {
       toast.error(error.response.data.message ?? "Erro ao registrar usuário");
     }
