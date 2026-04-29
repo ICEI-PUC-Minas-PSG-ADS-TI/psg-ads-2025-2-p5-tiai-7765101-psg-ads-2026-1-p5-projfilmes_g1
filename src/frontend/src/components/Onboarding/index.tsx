@@ -1,18 +1,14 @@
 import { useState } from "react";
+import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, ArrowRight, ArrowLeft, Sparkles, Check } from "lucide-react";
+import type { OnboardingResponses } from "@/types/onboarding";
 import "./Onboarding.css";
 
-interface OnboardingProps {
-  onComplete: (responses: OnboardingResponses) => void;
-}
+export type { OnboardingResponses };
 
-export interface OnboardingResponses {
-  objective?: string;
-  mood?: string;
-  frequency?: string;
-  helpWith?: string[];
-  difficultTimes?: string;
+interface OnboardingProps {
+  onComplete: (responses: OnboardingResponses) => Promise<void>;
 }
 
 const TOTAL_STEPS = 6;
@@ -26,12 +22,36 @@ const stepVariants = {
 const Onboarding = ({ onComplete }: OnboardingProps) => {
   const [step, setStep] = useState(0);
   const [responses, setResponses] = useState<OnboardingResponses>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const progress = ((step + 1) / TOTAL_STEPS) * 100;
 
-  const next = () => {
-    if (step < TOTAL_STEPS - 1) setStep(step + 1);
-    else onComplete(responses);
+  const next = async () => {
+    if (step < TOTAL_STEPS - 1) {
+      setStep(step + 1);
+      return;
+    }
+    setIsSubmitting(true);
+    setSubmitError(null);
+    try {
+      await onComplete(responses);
+    } catch (e: unknown) {
+      let message: string | undefined;
+      if (axios.isAxiosError(e)) {
+        const data = e.response?.data;
+        if (typeof data === "string") message = data;
+        else if (data && typeof data === "object" && "message" in data) {
+          const m = (data as { message?: unknown }).message;
+          if (typeof m === "string") message = m;
+        }
+      } else if (e instanceof Error) {
+        message = e.message;
+      }
+      setSubmitError(message ?? "Não foi possível salvar. Tente novamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const back = () => {
@@ -192,6 +212,11 @@ const Onboarding = ({ onComplete }: OnboardingProps) => {
             <p className="onboarding-hint">
               Esta pergunta é opcional — fique à vontade para pular
             </p>
+            {submitError && (
+              <p className="onboarding-submit-error" role="alert">
+                {submitError}
+              </p>
+            )}
             <div className="onboarding-options">
               {["Sim, bastante", "Um pouco", "Estou bem no momento", "Prefiro não responder"].map(
                 (opt) => (
@@ -246,7 +271,12 @@ const Onboarding = ({ onComplete }: OnboardingProps) => {
 
         <div className="onboarding-nav">
           {step > 0 ? (
-            <button className="onboarding-btn-back" onClick={back}>
+            <button
+              type="button"
+              className="onboarding-btn-back"
+              onClick={back}
+              disabled={isSubmitting}
+            >
               <ArrowLeft size={16} /> Voltar
             </button>
           ) : (
@@ -255,14 +285,25 @@ const Onboarding = ({ onComplete }: OnboardingProps) => {
 
           <div className="onboarding-nav-right">
             {step > 0 && !isLastStep && (
-              <button className="onboarding-btn-skip" onClick={next}>
+              <button
+                type="button"
+                className="onboarding-btn-skip"
+                onClick={() => void next()}
+                disabled={isSubmitting}
+              >
                 Pular
               </button>
             )}
-            <button className="onboarding-btn-next" onClick={next}>
+            <button
+              type="button"
+              className="onboarding-btn-next"
+              onClick={() => void next()}
+              disabled={isSubmitting}
+            >
               {isLastStep ? (
                 <>
-                  Começar <Sparkles size={16} />
+                  {isSubmitting ? "Salvando..." : "Começar"}{" "}
+                  {!isSubmitting && <Sparkles size={16} />}
                 </>
               ) : (
                 <>
