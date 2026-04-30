@@ -13,6 +13,7 @@ import { getToken } from "@/services/auth";
 const Home = () => {
   const [selectedMood, setSelectedMood] = useState<string | null>(null);
   const [nome, setNome] = useState<string>("");
+  const [insightsRefreshTrigger, setInsightsRefreshTrigger] = useState(0);
 
   useEffect(() => {
     const userToken = getToken();
@@ -20,7 +21,7 @@ const Home = () => {
       const { nome } = JSON.parse(localStorage.getItem("userToken") || "{}");
       setNome(nome)
     }
-  })
+  }, []);
 
   return (
     <div className="page-full">
@@ -37,10 +38,13 @@ const Home = () => {
 
         <div className="home-grid-2">
           <MoodSelector selectedMood={selectedMood} onSelectMood={setSelectedMood} />
-          <JournalCard selectedMood={selectedMood} />
+          <JournalCard
+            selectedMood={selectedMood}
+            onSaved={() => setInsightsRefreshTrigger((previous) => previous + 1)}
+          />
         </div>
 
-        <InsightsCard />
+        <InsightsCard refreshTrigger={insightsRefreshTrigger} />
 
         <div className="home-grid-2">
           <CalmNowCard />
