@@ -202,6 +202,33 @@ Este modelo deve exibir:
 ### 📎 Representação do Modelo Físico de Dados
 🚨 O grupo deverá inserir aqui a imagem do diagrama físico de dados.
 
+erDiagram
+    USERS ||--o{ EMOTIONS : "registra"
+    USERS ||--o{ BREATHING_LOGS : "realiza"
+
+    USERS {
+        uniqueidentifier Id PK
+        string Nome
+        string Sobrenome
+        string Email
+        string SenhaHash
+    }
+
+    EMOTIONS {
+        uniqueidentifier Id PK
+        uniqueidentifier UserId FK
+        string Emotion
+        datetime CreatedAt
+        string Diary
+    }
+
+    BREATHING_LOGS {
+        int Id PK
+        uniqueidentifier UserId FK
+        datetime StartTime
+        datetime EndTime
+    }
+
 ---
 🔧**Ferramentas Sugeridas**
 - MySQL Workbench (engenharia reversa automática)
